@@ -4,6 +4,7 @@ import Messages from "./Homepage/Messages.jsx"
 import Login from "./Components/Login.jsx"
 import Register from "./Components/Register.jsx"
 //mport Avatar from "./Components/Avatar.jsx"
+import "./css/Input.css"
 function Controller(){
   return(
     <div>

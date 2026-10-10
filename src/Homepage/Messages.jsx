@@ -15,13 +15,15 @@ const Messages = () =>{
   const [input,setInput] = useState()
   const[oldmessage,setOldmessage] = useState([{
     "Message":"Welcome",
-    "PostedBy":"JOLLY BRO"
+    "PostedBy":"Aveon"
   }])
   console.log(input);
   const submit = async(e) =>{
     e.preventDefault();
   let response =await Messageapi(input)
+    setInput("")
   let message = await response
+   
   }
 searchMessageapi()
  .then((res)=>{
@@ -40,6 +42,7 @@ searchMessageapi()
    <>
    <div className="userDetails">
   <h1> welcome {userDetails?userDetails.id.name:"New User"} </h1>
+     
   </div>
   <div className="Messagescontent">
   <FlipMove>
@@ -49,27 +52,29 @@ searchMessageapi()
       )
    })}
    </FlipMove>
+
   </div>
-   <div className="Main">
+       <div className="Main">
    
    <form className="app_form" onSubmit={submit}>
    <div className="input">
-    <FormControl className="app_FormControl">
-   <Input className="app_input" placeholder="Enter your message...!" onChange={(e)=>{
-     setInput(e.target.value)
-   }} />
-   <IconButton varaint="contained" type="submit" color="primary" className="BTN_icon" disabled={!input}/>
-    </FormControl>
+     <div className="finput">
+       <FormControl className="app_FormControl">  
+<Input className="app_input" placeholder="Enter your message...!"  value={input} onChange={(e)=>{  
+setInput(e.target.value)  
+}} />  
+   <IconButton varaint="contained" type="submit" color="primary" className="BTN_icon" disabled={!input}/>  
+    </FormControl>  
    <SendIcon />
+     </div>
+
    </div>
 
    </form>
    </div>
-   <style>
-   {
-   }
-   </style>
+
    </>
+  
   )
 }
 export default Messages

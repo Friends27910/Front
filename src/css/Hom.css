@@ -82,6 +82,7 @@ border-bottom: 2px solid aqua;
     font-size: 20px;
     color:white;
 }#Home .input-group{
+    margin:10px;
     width: 40%;
     height: 45px;
 }
@@ -178,4 +179,9 @@ p{
    border-radius:20px ! important;
    justify-content: center;
    align-items: center;
+}
+
+/* Keep chat messages visible above the input */
+.chat_messages {
+  padding-bottom: 100px;
 }
